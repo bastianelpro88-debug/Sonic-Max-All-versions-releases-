@@ -1,0 +1,507 @@
+
+:root {
+  --night: #09051f;
+  --blue: #087bff;
+  --cyan: #4ceaff;
+  --purple: #922bff;
+  --yellow: #ffe34c;
+  --ground: #a64b28;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--night);
+  color: white;
+  font-family: "Courier New", monospace;
+}
+
+button {
+  font: inherit;
+}
+
+#intro {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 440px;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(
+    #06134e 0%,
+    #087bd1 42%,
+    #62dfff 78%,
+    #baf6ff 100%
+  );
+  image-rendering: pixelated;
+}
+
+/* CIELO */
+
+.stars {
+  position: absolute;
+  inset: 0;
+  opacity: .8;
+  background-image:
+    radial-gradient(circle, white 1px, transparent 2px),
+    radial-gradient(circle, #8beaff 1px, transparent 2px);
+  background-size: 57px 61px, 91px 83px;
+  background-position: 13px 20px, 40px 10px;
+}
+
+.sun {
+  position: absolute;
+  top: 12%;
+  right: 12%;
+  width: clamp(50px, 10vw, 105px);
+  aspect-ratio: 1;
+  background: var(--yellow);
+  box-shadow:
+    0 0 0 7px #ffbd43,
+    0 0 30px #ffed77;
+}
+
+.scene-title {
+  position: absolute;
+  top: 6%;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-shadow: 2px 2px #071744;
+  z-index: 1;
+}
+
+.scene-title span {
+  font-size: clamp(8px, 1.5vw, 12px);
+  color: #a4f4ff;
+  letter-spacing: 2px;
+}
+
+.scene-title strong {
+  font-size: clamp(11px, 2.4vw, 20px);
+}
+
+/* MONTAÑAS */
+
+.mountains {
+  position: absolute;
+  inset: 31% 0 18%;
+  background: #138d91;
+  clip-path: polygon(
+    0 66%, 12% 20%, 23% 59%,
+    38% 9%, 54% 60%, 72% 18%,
+    86% 52%, 100% 28%,
+    100% 100%, 0 100%
+  );
+}
+
+.palm {
+  position: absolute;
+  z-index: 1;
+  font-size: clamp(30px, 6vw, 65px);
+  filter: saturate(.8);
+}
+
+.palm-one {
+  left: 5%;
+  bottom: 19%;
+}
+
+.palm-two {
+  right: 4%;
+  bottom: 19%;
+}
+
+/* SUELO */
+
+.ground {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  height: 20%;
+  width: 100%;
+  background: var(--ground);
+  border-top: 9px solid #287d35;
+}
+
+.ground-grass {
+  position: absolute;
+  top: -9px;
+  height: 9px;
+  width: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    #36ed54 0 18px,
+    #9bff58 18px 28px,
+    #1bc745 28px 39px
+  );
+}
+
+.ground-pattern {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-conic-gradient(
+      #71351f 0% 25%,
+      #c76b38 0% 50%
+    ) 0 0 / 40px 40px;
+}
+
+/* PERSONAJES */
+
+.character {
+  position: absolute;
+  z-index: 3;
+  bottom: 20%;
+  left: -100px;
+  width: clamp(34px, 5.3vw, 58px);
+  height: clamp(57px, 9vw, 91px);
+  --fur: var(--blue);
+  filter: drop-shadow(2px 3px 0 #172044);
+  image-rendering: pixelated;
+}
+
+.character .body {
+  position: absolute;
+  top: 36%;
+  left: 22%;
+  width: 52%;
+  height: 40%;
+  background: var(--fur);
+  border-bottom: 5px solid #13132b;
+}
+
+.character .face {
+  position: absolute;
+  z-index: 2;
+  top: 14%;
+  left: 31%;
+  width: 58%;
+  height: 29%;
+  background: #ffd3aa;
+}
+
+.character .eye {
+  position: absolute;
+  top: 12%;
+  right: 13%;
+  width: 25%;
+  height: 56%;
+  background: white;
+  border-right: 3px solid #17132e;
+}
+
+.character .quills {
+  position: absolute;
+  top: 0;
+  left: 2%;
+  width: 60%;
+  height: 38%;
+  background: var(--fur);
+  clip-path: polygon(
+    0 0, 100% 10%, 53% 40%,
+    100% 53%, 42% 72%, 82% 100%,
+    0 78%
+  );
+}
+
+.character .glove {
+  position: absolute;
+  z-index: 3;
+  top: 51%;
+  right: -2%;
+  width: 27%;
+  height: 21%;
+  background: white;
+  border: 3px solid #b3caff;
+}
+
+.character .shoe {
+  position: absolute;
+  bottom: 0;
+  left: 14%;
+  width: 78%;
+  height: 15%;
+  background: #f03747;
+  border-bottom: 4px solid white;
+  box-shadow: 0 4px 0 #1b2448;
+}
+
+.sonic {
+  --fur: #0874ff;
+}
+
+.tails {
+  --fur: #ff9d22;
+}
+
+.tails-tails {
+  position: absolute;
+  top: 48%;
+  left: -18%;
+  width: 32%;
+  height: 28%;
+  background: #ff9d22;
+  clip-path: polygon(100% 0, 80% 100%, 0 60%);
+}
+
+.knuckles {
+  --fur: #e92c36;
+}
+
+.shadow {
+  --fur: #242436;
+}
+
+.shadow .quills {
+  background: linear-gradient(90deg, #17152c 65%, #e52e45 66%);
+}
+
+.rouge {
+  --fur: #f17be7;
+}
+
+.wings {
+  position: absolute;
+  top: 39%;
+  left: -18%;
+  width: 135%;
+  height: 25%;
+  background: #f5e8ff;
+  clip-path: polygon(50% 30%, 0 0, 20% 100%, 50% 70%,
+    80% 100%, 100% 0);
+}
+
+.amy {
+  --fur: #ff55b8;
+}
+
+.sach {
+  --fur: #7625ee;
+  filter:
+    drop-shadow(0 0 5px #9d47ff)
+    drop-shadow(2px 3px 0 #11102d);
+}
+
+.sach .quills {
+  background: linear-gradient(
+    90deg, #4d13c5 0 55%, #31baff 56% 69%, #922bff 70%
+  );
+  clip-path: polygon(
+    0 0, 100% 10%, 63% 36%, 100% 49%,
+    49% 64%, 85% 100%, 0 76%
+  );
+}
+
+.sach .body {
+  background: #18162e;
+  border-bottom-color: #5634a8;
+}
+
+.sach .shoe {
+  background: #3824a0;
+  border-bottom-color: #68dfff;
+}
+
+.sach .eye {
+  background: #ff5cda;
+  border-right-color: #bb8aff;
+}
+
+.energy {
+  position: absolute;
+  top: 45%;
+  right: -24%;
+  width: 22%;
+  height: 18%;
+  background: #a64cff;
+  box-shadow: 0 0 10px #8e38ff;
+  clip-path: polygon(0 25%, 100% 0, 70% 100%);
+}
+
+/* ENTRADAS */
+
+@keyframes sonicEnter {
+  from { left: -100px; }
+  to { left: 12%; }
+}
+
+@keyframes tailsEnter {
+  from { left: -100px; }
+  to { left: 25%; }
+}
+
+@keyframes knucklesEnter {
+  from { left: -100px; }
+  to { left: 38%; }
+}
+
+@keyframes shadowEnter {
+  from { left: -100px; }
+  to { left: 51%; }
+}
+
+@keyframes rougeEnter {
+  from { left: -100px; }
+  to { left: 63%; }
+}
+
+@keyframes amyEnter {
+  from { left: -100px; }
+  to { left: 74%; }
+}
+
+@keyframes sachEnter {
+  from { left: -100px; }
+  to { left: 84%; }
+}
+
+/* LOGO Y TÍTULO */
+
+.title-screen {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at center, #182b74, #09051f 72%);
+  opacity: 0;
+  animation: titleReveal 1s 4s forwards;
+}
+
+.logo-emblem {
+  color: var(--cyan);
+  font-size: 30px;
+  text-shadow: 0 0 20px var(--cyan);
+}
+
+.edition {
+  color: #75eaff;
+  font-size: clamp(9px, 2vw, 15px);
+  letter-spacing: 3px;
+}
+
+h1 {
+  margin: 12px 0;
+  font-size: clamp(44px, 11vw, 96px);
+  font-weight: 1000;
+  font-style: italic;
+  letter-spacing: -4px;
+  color: white;
+  text-shadow:
+    4px 4px #1760cf,
+    8px 8px #080a2c;
+}
+
+h1 span {
+  color: var(--yellow);
+  text-shadow:
+    4px 4px #ed4b31,
+    8px 8px #080a2c;
+}
+
+.subtitle {
+  color: #a5ccff;
+  font-size: clamp(8px, 2vw, 13px);
+  letter-spacing: 1px;
+}
+
+.title-screen button {
+  margin-top: 24px;
+  padding: 14px 18px;
+  border: 3px solid white;
+  background: #7a2bff;
+  color: white;
+  font-size: clamp(10px, 2.4vw, 15px);
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 5px 5px 0 #211052;
+}
+
+.title-screen button:hover {
+  background: #a44cff;
+  transform: translateY(-2px);
+}
+
+.title-screen button:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 4px;
+}
+
+.press-note {
+  color: #8495d5;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.copyright {
+  position: absolute;
+  z-index: 6;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 9px;
+  color: white;
+  text-shadow: 1px 1px #111;
+}
+
+@keyframes titleReveal {
+  to { opacity: 1; }
+}
+
+/* MÓVILES */
+
+@media (max-width: 520px) {
+  .scene-title {
+    top: 4%;
+    left: 4%;
+  }
+
+  .character {
+    width: 36px;
+    height: 60px;
+  }
+
+  .ground {
+    height: 17%;
+  }
+
+  .palm {
+    font-size: 30px;
+  }
+
+  .title-screen {
+    padding: 12px;
+  }
+
+  h1 {
+    letter-spacing: -2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+ 

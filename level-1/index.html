@@ -1,1 +1,116 @@
 
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#071329">
+  <meta name="description" content="Sonic Max: Escape From the City — Act 1">
+  <title>Sonic Max | Escape From the City — ACT 1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="game" aria-label="Escape From the City, Acto 1">
+
+    <div class="sky-glow"></div>
+    <div class="sun"></div>
+    <div class="cloud cloud-one"></div>
+    <div class="cloud cloud-two"></div>
+
+    <div class="city city-back" aria-hidden="true">
+      <div class="building"></div><div class="building"></div>
+      <div class="building"></div><div class="building"></div>
+      <div class="building"></div><div class="building"></div>
+      <div class="building"></div><div class="building"></div>
+      <div class="building"></div><div class="building"></div>
+    </div>
+
+    <div class="city" aria-hidden="true">
+      <div class="building"></div><div class="building"></div>
+      <div class="building"></div><div class="building"></div>
+      <div class="building"></div><div class="building"></div>
+      <div class="building"></div><div class="building"></div>
+      <div class="building"></div><div class="building"></div>
+      <div class="building"></div><div class="building"></div>
+    </div>
+
+    <div class="horizon"></div>
+
+    <div class="road" aria-hidden="true">
+      <div class="road-lines"></div>
+      <div class="road-edge"></div>
+      <div class="lane"></div>
+    </div>
+
+    <div id="rings" aria-label="Anillos coleccionables"></div>
+
+    <div id="player" class="running" role="img" aria-label="Personaje">
+      🦔
+    </div>
+
+    <div id="zone-title">
+      <small>SONIC MAX • ZONA 01</small>
+      <h1>ESCAPE FROM<br>THE CITY</h1>
+      <p>ACT 1 — RUN FOR YOUR LIFE!</p>
+    </div>
+
+    <section id="hud" aria-label="Estadísticas">
+      <div class="hud-panel">
+        <div class="hud-label">ANILLOS</div>
+        <div class="hud-value">💍 <span id="ring-count">0</span></div>
+      </div>
+
+      <div class="hud-panel">
+        <div class="hud-label">PUNTOS</div>
+        <div class="hud-value" id="score">0</div>
+      </div>
+
+      <div class="hud-panel">
+        <div class="hud-label">VELOCIDAD</div>
+        <div class="hud-value"><span id="speed">90</span> km/h</div>
+        <div class="hud-label">IMPULSO <span id="boost-value">100%</span></div>
+      </div>
+    </section>
+
+    <div id="progress-wrap" aria-label="Progreso del nivel">
+      <div id="progress"></div>
+    </div>
+
+    <div id="toast" aria-live="polite"></div>
+    <div id="flash"></div>
+
+    <section id="controls" aria-label="Controles del juego">
+      <div class="control-group">
+        <button id="boost" class="control-btn" type="button"
+          aria-label="Mantener para activar impulso">⚡</button>
+      </div>
+
+      <div class="control-group">
+        <button id="jump" class="control-btn" type="button"
+          aria-label="Saltar">⬆</button>
+      </div>
+    </section>
+
+    <section id="overlay" role="dialog" aria-modal="true"
+      aria-labelledby="modal-title">
+      <div class="modal">
+        <h2 id="modal-title">ESCAPE FROM THE CITY</h2>
+        <p id="modal-message">
+          ¡Corre por la ciudad, recoge anillos y esquiva los obstáculos!
+          Mantén ⚡ para activar el impulso y pulsa ⬆ para saltar.
+        </p>
+        <button id="start-button" class="menu-btn" type="button">
+          ¡COMENZAR!
+        </button>
+        <button id="secondary-button" class="menu-btn" type="button">
+          VOLVER AL MENÚ
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="game.js" defer></script>
+</body>
+</html>
